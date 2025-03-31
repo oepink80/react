@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",             // Базовый путь для импорта относительно текущего каталога
+    "paths": {
+      "*": ["./*"]              // Указываем пути для всех возможных имен пакетов
+    },
+    "esModuleInterop": true,     // Включаем совместимость с модулями ES
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  },
+  "include": ["src/**/*"],       // Указываем, какие файлы включить в трансляцию
+  "exclude": ["node_modules", "**/*.spec.js"]
+}

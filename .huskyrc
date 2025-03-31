@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "npm run lint",
+    "commit-msg": "git rev-parse-remote origin master > /dev/null || echo 'Not on mainline!' | cat >> $GH_TEMPLATE/COMMIT_MSG.template"
+  }
+}
