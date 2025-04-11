@@ -6,7 +6,7 @@ const RatingComponent = () => {
   const [value, setValue] = useState<number>(2); // Указываем тип number для начального значения
 
   const handleChange = (_event: React.ChangeEvent<{}>, newValue: number | null) => {
-    setValue(newValue ?? 0); 
+    setValue(newValue ?? 0);
   };
 
   return (
