@@ -29,7 +29,6 @@ const PostItem = ({ post }: PostItemProps) => {
         queryKey: ['single-post', post.id], // Уникальный ключ для кеширования
         queryFn: async () => {
           const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${post.id}`);
-          console.log(response.data);
           return postSchema.parse(response.data); // Применяем валидацию
         },
       });
@@ -53,19 +52,17 @@ const PostItem = ({ post }: PostItemProps) => {
       throw error;
     }
   };
-
   return (
     <>
-      {/* Основная карточка поста */}
+      {!showModal &&(
       <div
-        className="bg-white "
+        className="bg-white shadow-md rounded-lg p-4 mb-4 cursor-pointer hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
         onClick={() => fetchFullPost()}
       >
         <strong className="block text-gray-800 font-semibold">{post.title}</strong>
         <p className="mt-2 text-gray-600 leading-relaxed">{post.body}</p>
       </div>
-
-      {/* Модалка с полным текстом поста */}
+      )}
       {showModal && currentPost && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white w-1/2 p-4 rounded-lg shadow-lg">
@@ -97,6 +94,7 @@ const PostItem = ({ post }: PostItemProps) => {
           </div>
         </div>
       )}
+      <div className="error-message" style={{ color: 'red' }}>{errorMessage}</div>
     </>
   );
 };
