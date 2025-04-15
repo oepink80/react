@@ -1,11 +1,17 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { z } from 'zod';
 
-interface PostItemProps {
-  post: any;
+interface Post {
+  id: number;
+  title: string;
+  body: string;
 }
+
+type PostItemProps = {
+  post: Post;
+};
 
 export const postSchema = z.object({
   userId: z.number().positive(), // Положительное целое число
@@ -47,22 +53,19 @@ const PostItem = ({ post }: PostItemProps) => {
 
   const fetchcomments = async () => {
     console.log('fetching comments for post', post.id);
-    try {
       const response = await axios.get(
         `https://jsonplaceholder.typicode.com/posts/${post.id}/comments`,
       );
       return response.data;
-    } catch (error) {
-      throw error;
-    }
   };
+
   return (
     <>
       {!showModal && (
         <div
           className="bg-white shadow-md rounded-lg p-4 mb-4 cursor-pointer hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           onClick={() => fetchFullPost()}
-        >
+        >g
           <strong className="block text-gray-800 font-semibold">
             {post.title}
           </strong>
