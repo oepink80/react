@@ -1,7 +1,8 @@
 import { MantineProvider } from '@mantine/core';
 import React, { useState } from 'react';
 
-import Card from '@/components/card/card';
+import Card from '@/components/Old/card/card';
+import PostList from '@/components/Old/PostList/PostList';
 import Mycalendar from '@/components/ui/calendar/mycalendar';
 import EButton from '@/components/ui/e-button/e-button';
 import Modal from '@/components/ui/modal/modal';
@@ -21,6 +22,7 @@ const Old = () => {
   };
   return (
     <>
+      <PostList />
       <h3>Табы</h3>
       <MyTabs />
       <h3>Кнопка AntD</h3>

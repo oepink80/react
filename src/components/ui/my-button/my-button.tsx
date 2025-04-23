@@ -1,13 +1,22 @@
-import { Button as AntdButton } from 'antd'; // Импорт компонента Button из AntD
 import React from 'react';
 
-class Button extends React.Component<{ text: string }> {
+import classes from './my-button.module.css';
+
+interface Props {
+  onClick?: any; // Опциональный обработчик нажатия
+  text: string; // Надпись на кнопке
+  type?: 'submit' | 'reset' | 'button';
+}
+
+class Button extends React.Component<Props> {
   render() {
-    const { text } = this.props;
+    const { onClick, text, type = 'button' } = this.props; // Используем дефолтный тип primary
+
     return (
       <div>
-        <AntdButton type="primary">{text}</AntdButton>{' '}
-        {/* Используем компонент Button из AntD */}
+        <button type={type} className={classes.button} onClick={onClick}>
+          {text}
+        </button>
       </div>
     );
   }

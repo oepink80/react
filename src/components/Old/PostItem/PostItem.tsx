@@ -53,10 +53,10 @@ const PostItem = ({ post }: PostItemProps) => {
 
   const fetchcomments = async () => {
     console.log('fetching comments for post', post.id);
-      const response = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/${post.id}/comments`,
-      );
-      return response.data;
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts/${post.id}/comments`,
+    );
+    return response.data;
   };
 
   return (
@@ -65,7 +65,8 @@ const PostItem = ({ post }: PostItemProps) => {
         <div
           className="bg-white shadow-md rounded-lg p-4 mb-4 cursor-pointer hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
           onClick={() => fetchFullPost()}
-        >g
+        >
+          g
           <strong className="block text-gray-800 font-semibold">
             {post.title}
           </strong>

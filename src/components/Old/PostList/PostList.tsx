@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import PostItem from '@/components/PostItem/PostItem';
+import PostItem from '@/components/Old/PostItem/PostItem';
 
 interface Post {
   id: number;

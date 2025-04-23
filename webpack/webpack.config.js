@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development', // Добавляем этот параметр
-  entry: './src/index.js', // точка входа приложения
+  entry: './src/index.tsx', // точка входа приложения
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),

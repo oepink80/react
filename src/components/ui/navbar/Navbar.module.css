@@ -1,0 +1,69 @@
+/* Общий контейнер навигационной панели */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 100%;
+    background-color: lightgrey;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Плавность перехода */
+}
+
+/* Темная версия контейнера */
+.navbar.dark {
+    background-color: #333;
+    color: #fff;
+    border-color: #777;
+}
+
+/* Название магазина */
+.navbar__title {
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Для плавного изменения цвета текста */
+}
+
+/* Темная версия названия магазина */
+.navbar.dark .navbar__title {
+    color: #fff;
+}
+
+/* Контейнер ссылок */
+.navbar__links {
+    display: flex;
+    align-items: center;
+}
+
+/* Стили ссылок внутри навигационного меню */
+.navbar__links a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease; /* Плавность изменения цвета текста */
+}
+
+/* Темная версия ссылок */
+.navbar.dark .navbar__links a {
+    color: #fff;
+}
+
+/* Опциональный дополнительный стиль кнопки выхода (например, если кнопка тоже находится в navbar__links)*/
+.navbar__links button {
+    margin-left: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Плавность перехода */
+}
+
+/* Темная версия кнопки выхода */
+.navbar.dark .navbar__links button {
+    background-color: transparent;
+    border-color: #ccc;
+    color: #fff;
+}
