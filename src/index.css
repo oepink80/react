@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
+
+@layer utilities {
+    @variants dark {
+        .dark\\:bg-gray-900 {
+            background-color: #1a202c;
+        }
+
+        .dark\\:text-gray-300 {
+            color: #d1d5db;
+        }
+
+        /* Остальные специфичные для тёмной темы стили */
+    }
+}
+
 @tailwind utilities;

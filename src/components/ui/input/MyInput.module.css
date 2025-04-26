@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.MyInput {
+    @apply w-full h-10 pl-3 pr-8 text-base placeholder:text-gray-400 relative border rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
+    dark:border-gray-600 dark:focus:ring-blue-500 dark:focus:border-transparent
+    invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+}
